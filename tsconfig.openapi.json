@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES2019",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "outDir": ".openapi-build",
+    "rootDir": "."
+  },
+  "include": ["src/lib/api/**/*.ts"],
+  "exclude": ["node_modules"]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "api_generator_test",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "generate:openapi": "rm -rf .openapi-build && tsc -p tsconfig.openapi.json && node ./scripts/generate-openapi.mjs .openapi-build/src/lib/api/index.js .openapi-build/site /api && cp public/openapi/index.html .openapi-build/site/apps/openapi/index.html"
+  },
+  "dependencies": {
+    "@asteasolutions/zod-to-openapi": "^7.2.0",
+    "@svazqz/api-contract-kit": "0.1.1-alpha",
+    "next": "^16.2.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "@types/react": "^19.2.14",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "^16.2.0",
+    "typescript": "^5.9.3"
+  }
+}
