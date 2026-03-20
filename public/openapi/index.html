@@ -11,7 +11,10 @@
     </style>
   </head>
   <body>
-    <redoc spec-url="./docs.json"></redoc>
-    <script src="https://cdn.jsdelivr.net/npm/redoc@next/bundles/redoc.standalone.js"></script>
+    <div id="redoc-container"></div>
+    <script src="https://cdn.jsdelivr.net/npm/redoc@2.1.3/bundles/redoc.standalone.js"></script>
+    <script>
+      window.Redoc.init('./docs.json', {}, document.getElementById('redoc-container'));
+    </script>
   </body>
 </html>
