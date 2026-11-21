@@ -2,7 +2,7 @@
 
 A working Next.js example of API Contract Kit. Explore the geography and service-status endpoints, the typed client, and the generated OpenAPI site.
 
-[![OpenAPI Pages workflow](https://github.com/svazqz/api-contract-kit-demo/actions/workflows/deploy-openapi-pages.yml/badge.svg?branch=main)](https://github.com/svazqz/api-contract-kit-demo/actions/workflows/deploy-openapi-pages.yml)
+[![OpenAPI Pages workflow](https://github.com/svazqz/api-contract-kit-demo/actions/workflows/deploy-openapi-pages.yml/badge.svg?branch=main)](https://github.com/svazqz/api-contract-kit-demo/actions/workflows/deploy-openapi-pages.yml) [![Validation](https://github.com/svazqz/api-contract-kit-demo/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/svazqz/api-contract-kit-demo/actions/workflows/ci.yml)
 
 [Quick start](#quick-start) · [Validation](#validation) · [Project layout](#project-layout)
 
