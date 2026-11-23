@@ -16,23 +16,16 @@ jobs:
   validate:
     name: "JavaScript validation"
     runs-on: "ubuntu-24.04"
-    timeout-minutes: 12
+    timeout-minutes: 16
     steps:
       - name: "Check out source"
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           persist-credentials: false
-      - name: "Set up Node.js"
-        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
-        with:
-          node-version: "22"
-          package-manager-cache: false
-          cache: "npm"
-      - name: "Install locked dependencies"
-        run: "npm ci"
-      - name: "Validate"
+      - name: "Build and run headless browser tests"
+        shell: bash
         run: |
-          npm run typecheck
-          npm run lint
-          npm run generate:openapi
-          npm run build
+          set -o pipefail
+          docker run --rm --init --shm-size=1g \
+            --mount "type=bind,source=$GITHUB_WORKSPACE,target=/src,readonly" \
+            mcr.microsoft.com/playwright:v1.64.1-noble sh /src/tests/browser/container.sh | tee -a "$GITHUB_STEP_SUMMARY"

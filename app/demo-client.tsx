@@ -15,7 +15,7 @@ export function DemoClient() {
       setLoading(true);
       setError(null);
       const client = createClient({
-        baseUrl: window.location.origin,
+        baseUrl: new URL('/api', window.location.origin).href,
       });
 
       const geo = await client.call(getGeoData, {
