@@ -1,5 +1,6 @@
 import { createAPIDefinition } from '@svazqz/api-contract-kit/dist/api-contract-kit';
 import {
+  CoordinatesQuerySchema,
   CoordinatesSchema,
   GeoResponseSchema,
   ServiceParamsSchema,
@@ -11,7 +12,7 @@ export const getGeoData = createAPIDefinition({
   method: 'get',
   path: '/geo',
   schemas: {
-    queryParams: CoordinatesSchema,
+    queryParams: CoordinatesQuerySchema,
     response: GeoResponseSchema,
   },
   openapi: {

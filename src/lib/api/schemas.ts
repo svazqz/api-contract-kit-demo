@@ -10,6 +10,13 @@ export const CoordinatesSchema = z
   })
   .openapi('CoordinatesSchema');
 
+export const CoordinatesQuerySchema = z
+  .object({
+    latitude: z.coerce.number().min(-90).max(90),
+    longitude: z.coerce.number().min(-180).max(180),
+  })
+  .openapi('CoordinatesQuerySchema');
+
 export const GeoResponseSchema = z
   .object({
     city: z.string(),

@@ -1,24 +1,11 @@
 import { nextAdapter } from '@svazqz/api-contract-kit/dist/server';
+import { mapRouteError } from '@/src/lib/api/demo-errors';
 import { getServiceStatus } from '@/src/lib/api/definitions';
 
-const uptimeByService = {
-  database: 12840,
-  cache: 9821,
-  queue: 7760,
-} as const;
+import { resolveStatus } from '@/src/lib/api/demo-data';
 
-const getHandler = nextAdapter(getServiceStatus, async (_request, query, urlParams) => {
-  const service = urlParams?.service ?? 'database';
-  const region = query?.region ?? 'us';
-  const uptimeMinutes = uptimeByService[service];
-  const status = uptimeMinutes > 9000 ? ('healthy' as const) : ('degraded' as const);
-
-  return {
-    service,
-    region,
-    status,
-    uptimeMinutes,
-  };
+const getHandler = nextAdapter({ ...getServiceStatus, errorMapper: mapRouteError }, async (_request, query, urlParams) => {
+  return resolveStatus(urlParams?.service ?? 'database', query?.region ?? 'us');
 });
 
 export async function GET(
