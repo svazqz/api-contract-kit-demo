@@ -1,0 +1,270 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 100vh;
+  padding: 1.25rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.25rem;
+  align-items: flex-start;
+  padding: 1rem;
+  border: 1px solid #1e293b;
+  border-radius: 0.9rem;
+  background: linear-gradient(180deg, #111b30 0%, #0f172a 100%);
+}
+
+.kicker {
+  margin: 0 0 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #94a3b8;
+  font-size: 0.72rem;
+}
+
+.subtitle {
+  max-width: 54rem;
+  color: #cbd5e1;
+}
+
+.controls {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.controls button {
+  border: 1px solid #334155;
+  background: #111827;
+  color: #e2e8f0;
+  padding: 0.45rem 0.75rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: border-color 180ms ease;
+}
+
+.controls button:hover {
+  border-color: #60a5fa;
+}
+
+.progress {
+  color: #93c5fd;
+  font-size: 0.88rem;
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(120px, 1fr));
+  gap: 0.55rem;
+}
+
+.timeline-step {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.18rem;
+  border: 1px solid #1f2937;
+  background: #0b1222;
+  color: #cbd5e1;
+  border-radius: 0.65rem;
+  padding: 0.55rem 0.62rem;
+  cursor: pointer;
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    background-color 220ms ease;
+}
+
+.timeline-step span {
+  font-size: 0.72rem;
+  color: #93c5fd;
+}
+
+.timeline-step strong {
+  font-size: 0.79rem;
+}
+
+.timeline-step:hover {
+  transform: translateY(-1px);
+  border-color: #3b82f6;
+}
+
+.timeline-step.active {
+  border-color: #60a5fa;
+  background: #13203a;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: 1.65fr 1fr;
+  gap: 1rem;
+}
+
+.code-card,
+.details-card {
+  border: 1px solid #1f2937;
+  border-radius: 0.75rem;
+  background: #0f172a;
+  padding: 1rem;
+}
+
+.code-card h2 {
+  margin-bottom: 0.8rem;
+}
+
+.loading,
+.terminal {
+  margin: 0;
+  padding: 0.9rem;
+  border-radius: 0.5rem;
+  background: #020617;
+  color: #f8fafc;
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+
+.feature-list {
+  margin: 0.5rem 0 1rem;
+  padding-left: 1rem;
+  display: grid;
+  gap: 0.45rem;
+  color: #cbd5e1;
+}
+
+.details-card p {
+  margin: 0.4rem 0 1rem;
+  color: #e2e8f0;
+}
+
+.sync-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.sync-panel {
+  border: 1px solid #1e293b;
+  border-radius: 0.65rem;
+  background: #0b1324;
+  padding: 0.5rem;
+}
+
+.sync-panel header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.45rem;
+  gap: 0.5rem;
+}
+
+.sync-panel h3 {
+  font-size: 0.92rem;
+}
+
+.status-pill {
+  border-radius: 999px;
+  padding: 0.18rem 0.5rem;
+  font-size: 0.7rem;
+  line-height: 1.2;
+  border: 1px solid transparent;
+}
+
+.status-pill.ok {
+  color: #86efac;
+  background: #052e16;
+  border-color: #166534;
+}
+
+.status-pill.warning {
+  color: #fde68a;
+  background: #422006;
+  border-color: #a16207;
+}
+
+.status-pill.error {
+  color: #fecaca;
+  background: #450a0a;
+  border-color: #991b1b;
+}
+
+.sync-panel.ok {
+  border-color: #14532d;
+}
+
+.sync-panel.warning {
+  border-color: #854d0e;
+}
+
+.sync-panel.error {
+  border-color: #7f1d1d;
+  box-shadow: 0 0 0 1px rgba(239, 68, 68, 0.3);
+  animation: pulseError 1300ms ease-in-out infinite;
+}
+
+.error-stack {
+  margin-top: 0.75rem;
+  border: 1px solid #7f1d1d;
+  border-radius: 0.6rem;
+  background: #20090b;
+  padding: 0.7rem 0.8rem;
+}
+
+.error-stack h3 {
+  color: #fecaca;
+  margin-bottom: 0.45rem;
+}
+
+.error-stack ul {
+  margin: 0;
+  padding-left: 1rem;
+  color: #fca5a5;
+  display: grid;
+  gap: 0.35rem;
+}
+
+@keyframes pulseError {
+  0% {
+    box-shadow: 0 0 0 1px rgba(239, 68, 68, 0.22);
+  }
+
+  50% {
+    box-shadow: 0 0 0 2px rgba(248, 113, 113, 0.45);
+  }
+
+  100% {
+    box-shadow: 0 0 0 1px rgba(239, 68, 68, 0.22);
+  }
+}
+
+@media (max-width: 1320px) {
+  .timeline {
+    grid-template-columns: repeat(4, minmax(120px, 1fr));
+  }
+}
+
+@media (max-width: 1150px) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .sync-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .controls {
+    flex-wrap: wrap;
+  }
+
+  .timeline {
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+  }
+}

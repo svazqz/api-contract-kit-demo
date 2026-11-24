@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Define an HTTP endpoint once with Zod. Reuse the contract for server validation, typed clients, and OpenAPI.">
+  <title>API Contract Kit · One contract, every endpoint</title>
+  <link rel="stylesheet" href="./landing.css">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <header class="wrap mast">
+    <a class="wordmark" href="./"><span aria-hidden="true">{ }</span> API Contract Kit</a>
+    <nav aria-label="Main navigation">
+      <a href="#workflow">Workflow</a>
+      <a href="./openapi/">API reference</a>
+      <a href="https://github.com/svazqz/api-contract-kit">GitHub</a>
+    </nav>
+  </header>
+  <main id="content" class="wrap">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">TypeScript · Zod · OpenAPI</p>
+        <h1>One contract.<br><em>Every endpoint.</em></h1>
+        <p class="lede">Define an HTTP endpoint once. Use the same Zod schemas to validate requests, call the API from a typed client, and generate OpenAPI documentation.</p>
+        <div class="actions"><a class="button" href="#workflow">Explore the workflow</a><a class="secondary" href="./openapi/">Browse the API reference</a></div>
+      </div>
+      <div class="diagram" aria-label="One endpoint definition feeds server validation, the typed client, and OpenAPI">
+        <div class="diagram-title"><span class="dots" aria-hidden="true">● ● ●</span><span>THE CONTRACT</span></div>
+        <div class="endpoint"><span>GET</span> /geo</div>
+        <div class="wire" aria-hidden="true"></div>
+        <div class="outputs"><div><b>01 / Server</b><small>Validate input</small></div><div><b>02 / Client</b><small>Infer types</small></div><div><b>03 / Docs</b><small>Export OpenAPI</small></div></div>
+      </div>
+    </section>
+    <section id="workflow" class="workflow">
+      <div class="section-head"><div><p class="eyebrow">Interactive example</p><h2>Follow a contract change.</h2></div><a class="secondary" href="./workflow/">Open full example</a></div>
+      <p>Step through the endpoint definition, server adapter, typed client, and the OpenAPI output. The example shows where schema changes surface for consumers.</p>
+      <iframe title="API Contract Kit interactive workflow animation" src="./workflow/" loading="lazy"></iframe>
+    </section>
+    <section class="install" id="install">
+      <div><p class="eyebrow">Quick start</p><h2>Add it to your project.</h2><p>Install the library, then use the demo repository to follow the same endpoint from schema to OpenAPI.</p></div>
+      <div><pre><code>npm install @svazqz/api-contract-kit</code></pre><a href="https://github.com/svazqz/api-contract-kit-demo">See the example source</a></div>
+    </section>
+  </main>
+  <footer class="wrap">API Contract Kit <a href="https://www.npmjs.com/package/@svazqz/api-contract-kit">npm package</a><a href="./third-party-notices.txt">Third-party notices</a></footer>
+</body>
+</html>

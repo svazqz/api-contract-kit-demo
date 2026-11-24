@@ -1,4 +1,4 @@
-name: Deploy OpenAPI to GitHub Pages
+name: Deploy site and OpenAPI to GitHub Pages
 
 on:
   push:
@@ -27,16 +27,19 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-
-      - name: Replace local dependency for CI
-        run: npm pkg set dependencies.@svazqz/next-api-generator=^1.2.4
+          node-version: 24
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci --no-audit --no-fund
 
       - name: Generate OpenAPI artifact
         run: npm run generate:openapi
+
+      - name: Build the interactive workflow and Pages artifact
+        run: |
+          npm ci --prefix site/animation --no-audit --no-fund
+          npm exec --prefix site/animation -- vite build site/animation --base=./
+          node scripts/build-pages.mjs
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
