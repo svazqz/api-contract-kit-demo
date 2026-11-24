@@ -2,6 +2,8 @@
 
 A working Next.js example of API Contract Kit. Explore the geography and service-status endpoints, the typed client, and the generated OpenAPI site.
 
+[Project website](https://svazqz.github.io/api-contract-kit-demo/)
+
 [![OpenAPI Pages workflow](https://github.com/svazqz/api-contract-kit-demo/actions/workflows/deploy-openapi-pages.yml/badge.svg?branch=main)](https://github.com/svazqz/api-contract-kit-demo/actions/workflows/deploy-openapi-pages.yml) [![Validation](https://github.com/svazqz/api-contract-kit-demo/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/svazqz/api-contract-kit-demo/actions/workflows/ci.yml)
 
 [Quick start](#quick-start) · [Validation](#validation) · [Project layout](#project-layout)
@@ -31,3 +33,7 @@ npm run generate:openapi
 | [`app/`](app/) | Next.js routes, pages, and demo client |
 | [`src/lib/api/`](src/lib/api/) | API definitions and schemas |
 | [`scripts/generate-openapi.mjs`](scripts/generate-openapi.mjs) | Static OpenAPI export |
+
+## License
+
+Original project code is available under the [MIT License](LICENSE). Third-party components retain their own terms.
