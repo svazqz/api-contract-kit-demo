@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Define an HTTP endpoint once with Zod. Reuse the contract for server validation, typed clients, and OpenAPI.">
+  <meta name="description" content="See how API Contract Kit turns TypeScript endpoint contracts into auto-generated OpenAPI docs on GitHub Pages.">
   <title>API Contract Kit · One contract, every endpoint</title>
   <link rel="stylesheet" href="./landing.css">
 </head>
@@ -13,7 +13,7 @@
     <a class="wordmark" href="./"><span aria-hidden="true">{ }</span> API Contract Kit</a>
     <nav aria-label="Main navigation">
       <a href="#workflow">Workflow</a>
-      <a href="./openapi/">API reference</a>
+      <a href="./openapi/">Auto-generated docs</a>
       <a href="https://github.com/svazqz/api-contract-kit">GitHub</a>
     </nav>
   </header>
@@ -22,8 +22,8 @@
       <div>
         <p class="eyebrow">TypeScript · Zod · OpenAPI</p>
         <h1>One contract.<br><em>Every endpoint.</em></h1>
-        <p class="lede">Define an HTTP endpoint once. Use the same Zod schemas to validate requests, call the API from a typed client, and generate OpenAPI documentation.</p>
-        <div class="actions"><a class="button" href="#workflow">Explore the workflow</a><a class="secondary" href="./openapi/">Browse the API reference</a></div>
+        <p class="lede">This demo uses API Contract Kit to define its own endpoints. On each GitHub Pages build, GitHub Actions generates OpenAPI docs from those same contracts and publishes them alongside this site.</p>
+        <div class="actions"><a class="button" href="#workflow">Explore the workflow</a><a class="secondary" href="./openapi/">See auto-generated docs</a></div>
       </div>
       <div class="diagram" aria-label="One endpoint definition feeds server validation, the typed client, and OpenAPI">
         <div class="diagram-title"><span class="dots" aria-hidden="true">● ● ●</span><span>THE CONTRACT</span></div>

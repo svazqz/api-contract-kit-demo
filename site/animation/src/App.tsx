@@ -443,18 +443,20 @@ function App() {
         ))}
       </section>
 
-      <section className="workspace">
+      <section className={frame.kind === 'sync' ? 'workspace workspace-sync' : 'workspace'}>
         <article className="code-card">
           <h2>{frame.title}</h2>
           {highlighter ? (
             frame.kind === 'single' ? (
-              <ShikiMagicMove
-                code={frame.code}
-                lang={frame.lang}
-                theme="github-dark"
-                highlighter={highlighter}
-                options={{ duration: 950, stagger: 0.3, lineNumbers: true }}
-              />
+              <div className="code-scroll" role="region" aria-label={`${frame.title} code`} tabIndex={0}>
+                <ShikiMagicMove
+                  code={frame.code}
+                  lang={frame.lang}
+                  theme="github-dark"
+                  highlighter={highlighter}
+                  options={{ duration: 950, stagger: 0.3, lineNumbers: true }}
+                />
+              </div>
             ) : (
               <div className="sync-grid">
                 {frame.panels.map((panel) => (
@@ -465,13 +467,15 @@ function App() {
                         {panel.statusText}
                       </span>
                     </header>
-                    <ShikiMagicMove
-                      code={panel.code}
-                      lang={panel.lang}
-                      theme="github-dark"
-                      highlighter={highlighter}
-                      options={{ duration: 950, stagger: 0.22, lineNumbers: true }}
-                    />
+                    <div className="code-scroll" role="region" aria-label={`${panel.title} code`} tabIndex={0}>
+                      <ShikiMagicMove
+                        code={panel.code}
+                        lang={panel.lang}
+                        theme="github-dark"
+                        highlighter={highlighter}
+                        options={{ duration: 950, stagger: 0.22, lineNumbers: true }}
+                      />
+                    </div>
                   </article>
                 ))}
               </div>
